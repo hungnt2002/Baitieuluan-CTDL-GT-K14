@@ -71,11 +71,30 @@ public class ChucNang {
         System.out.print("Nhập mã hàng hóa cần tìm: ");
         int ma = bienNhap.nextInt();
         System.out.println("Nhập thông tin để sửa mã hàng hóa: ");
+        System.out.print("Tên hàng hóa: ");
         bienNhap.nextLine();
-        int edit = bienNhap.nextInt();
+        String editTen = bienNhap.nextLine();
+
+        System.out.print("Loại: ");
+        
+        String editLoai = bienNhap.nextLine();
+
+        System.out.print("Ngày nhập kho: ");
+        String editNgay = bienNhap.nextLine();
+
+        System.out.print("Giá nhập: ");
+        int editGia = bienNhap.nextInt();
+
+        System.out.print("Số lượng tồn kho: ");
+        int editSoLuong = bienNhap.nextInt();   
+        
         for(int i = 0; i <= khoHangHoa.size(); i++){
             if(khoHangHoa.get(i).maHang == ma){
-                khoHangHoa.get(i).maHang = edit;
+                khoHangHoa.get(i).tenHangHoa = editTen;
+                khoHangHoa.get(i).loai = editLoai;
+                khoHangHoa.get(i).ngayNhapKho = editNgay;
+                khoHangHoa.get(i).gia = editGia;
+                khoHangHoa.get(i).soLuong = editSoLuong;
                 System.out.println("Sửa thành công");
                 break;
             }
