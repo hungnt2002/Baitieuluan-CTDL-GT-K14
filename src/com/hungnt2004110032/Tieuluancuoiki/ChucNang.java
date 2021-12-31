@@ -149,7 +149,7 @@ public class ChucNang {
         System.out.println("Nhập 2 lần số 1 để quay lại Menu");
     }
 
-    void sapXepHangHoa(){
+    void sapXepHangHoa() throws ParseException{
 
         System.out.println("1> Sắp xếp tăng dần theo giá");
         System.out.println("2> Sắp xếp giảm dần theo giá");
@@ -163,9 +163,9 @@ public class ChucNang {
                 break;
             case 2:sapXepGiamDanTheoGia();
                 break;
-            case 3:
+            case 3:sapXepTangDanTheoNgay();
                 break;
-            case 4:
+            case 4:sapXepGiamDanTheoNgay();
                 break;
         }
     }
@@ -213,26 +213,52 @@ public class ChucNang {
         inThongTinHangHoa();
     }
 
+    void sapXepGiamDanTheoNgay() throws ParseException{
+        Collections.sort(khoHangHoa, new Comparator<Product>() {
+            @Override
+            public int compare(Product o1, Product o2) {
+                return o1.ngayNhapKho.compareTo(o2.ngayNhapKho);
+            }
+        });
+        Collections.reverse(khoHangHoa);
+        System.out.println("==========Danh sách sau khi sắp xếp==========");
+        inThongTinHangHoa();
+    }
 
     void thongKe(){
-        System.out.println("==========Thống kê hàng hóa==========");
-        int count = 0;
+
         int sum = 0;
-        for(int i = 0; i < khoHangHoa.size(); i++){
-            count++;
-        }
-        System.out.println("Tổng số lượng hàng hóa: " + count + " hàng hóa");
+        System.out.println("1> Tổng số lượng hàng hóa");
+        System.out.println("2> Tổng giá trị nhập kho ");
+        System.out.println("3> Số lượng từng loại hàng ");
+        System.out.println("Chọn chức năng: ");
+        luaChon = bienNhap.nextInt();
 
-        for(int i = 0; i < khoHangHoa.size(); i++){
-            sum = sum + khoHangHoa.get(i).gia;
-        }
-        System.out.println("Tổng giá trị nhập kho: " + sum + " đồng");
+        System.out.println("==========Thống kê hàng hóa==========");
+        if(luaChon == 1){
 
-        System.out.println("Số lượng từng loại hàng hóa: ");
-        System.out.println("+ Số lượng Book: " + soLuongLoaiHangHoa("Book"));
-        System.out.println("+ Số lượng Laptop: " + soLuongLoaiHangHoa("Laptop"));
-        System.out.println("+ Số lượng Machine: " + soLuongLoaiHangHoa("Machine")); 
-        System.out.println("+ Số lượng Phone: " + soLuongLoaiHangHoa("Phone")); 
+            int count = 0;
+            for(int i = 0; i < khoHangHoa.size(); i++){
+                count++;
+            }
+            System.out.println("Tổng số lượng hàng hóa: " + count + " hàng hóa");
+
+        }else if(luaChon == 2){
+
+            for(int i = 0; i < khoHangHoa.size(); i++){
+                sum = sum + khoHangHoa.get(i).gia;
+            }
+            System.out.println("Tổng giá trị nhập kho: " + sum + " đồng");
+        }else if(luaChon == 3){
+            System.out.println("Số lượng từng loại hàng hóa: ");
+            System.out.println("+ Số lượng Book: " + soLuongLoaiHangHoa("Book"));
+            System.out.println("+ Số lượng Laptop: " + soLuongLoaiHangHoa("Laptop"));
+            System.out.println("+ Số lượng Machine: " + soLuongLoaiHangHoa("Machine")); 
+            System.out.println("+ Số lượng Phone: " + soLuongLoaiHangHoa("Phone"));
+        }else{
+            System.out.println("Nhập không đúng !");
+        }
+        
     }
 
     int soLuongLoaiHangHoa(String loai){
