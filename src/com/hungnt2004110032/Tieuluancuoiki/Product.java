@@ -2,9 +2,6 @@ package com.hungnt2004110032.Tieuluancuoiki;
 
 import java.util.Scanner;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Product{
 
@@ -53,18 +50,6 @@ public class Product{
         System.out.println("======================================");
     }
 
-    public static Date chuyenChuoiSangNgay(String chuoiNgay) throws ParseException{
-        //ngày việt nam
-        Date date;
-        /**
-         * dd: ngày
-         * mm: tháng
-         * yyyy: năm
-         */
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
-        date = simpleDateFormat.parse(chuoiNgay);
-        return date;
-    }
 
 }
 
