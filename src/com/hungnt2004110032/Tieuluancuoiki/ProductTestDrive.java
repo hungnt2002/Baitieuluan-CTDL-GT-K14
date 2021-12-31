@@ -10,7 +10,7 @@ public class ProductTestDrive {
 
     public static void main(String[] args) throws ParseException {
         int luaChon;
-
+    
         ChucNang chucNang = new ChucNang();
 
         chucNang.khoHangHoaCoSan(); // gọi phương thức hàng hóa có sẵn từ đối tượng Chức Năng

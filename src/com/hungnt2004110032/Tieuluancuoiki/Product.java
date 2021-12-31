@@ -25,6 +25,7 @@ public class Product{
     }
     
     public void inThongTin(){
+        
         System.out.println("Tên hàng hóa: " + tenHangHoa);
         System.out.println("Loại: " + loai);
         System.out.println("Ngày nhập kho: " + ngayNhapKho);
@@ -35,6 +36,7 @@ public class Product{
     }
 
     void nhapThongTin(){
+
         System.out.print("Nhập tên hàng hóa: ");
         tenHangHoa = nhap.nextLine();
         System.out.print("Nhập loại: ");

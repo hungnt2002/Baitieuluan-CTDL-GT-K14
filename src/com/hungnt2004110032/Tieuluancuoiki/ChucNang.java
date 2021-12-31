@@ -16,7 +16,6 @@ public class ChucNang {
     int luaChon;
 
     
-    
     void inThongTinHangHoa(){
         
         System.out.println("=====DANH SÁCH HÀNG HÓA TRONG KHO=====");
