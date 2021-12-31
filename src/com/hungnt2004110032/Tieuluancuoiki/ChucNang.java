@@ -130,7 +130,6 @@ public class ChucNang {
                 product.inThongTin();
             }
         }
-        System.out.println("Nhập 2 lần số 1 để quay lại Menu");
     }
 
     void timKiemTheoGia(){
@@ -161,11 +160,11 @@ public class ChucNang {
         System.out.println("============Đã tìm thấy hàng hóa============");
         for(Product product : khoHangHoa){
             Date ngayJava = chuyenChuoiSangNgay(product.ngayNhapKho);
+
             if(ngayJava.after(ngay1Java) && ngayJava.before(ngay2Java)){
                 product.inThongTin();
             }
         }
-        System.out.println("Nhập 2 lần số 1 để quay lại Menu");
     }
 
     void sapXepHangHoa() throws ParseException{
@@ -323,7 +322,7 @@ public class ChucNang {
          * mm: tháng
          * yyyy: năm
          */
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         date = simpleDateFormat.parse(chuoiNgay);
         return date;
     }
