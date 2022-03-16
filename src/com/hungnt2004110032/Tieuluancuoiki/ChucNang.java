@@ -120,7 +120,7 @@ public class ChucNang {
 
     }
     void timKiemTheoLoai(){
-        System.out.println("Nhập loại hàng hóa cần tìm: ");
+        System.out.print("Nhập loại hàng hóa cần tìm: ");
         bienNhap.nextLine();
         String loaiHangHoa = bienNhap.nextLine();
 
